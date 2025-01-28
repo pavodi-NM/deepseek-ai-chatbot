@@ -1,11 +1,11 @@
-// Format message content with code blocks and paragraphs
+
 function formatMessage(content) {
-    // Replace code blocks with properly formatted HTML
+
     content = content.replace(/```([\s\S]*?)```/g, (match, code) => 
         `<pre><code>${code.trim()}</code></pre>`
     );
     
-    // Format paragraphs, but skip if inside pre tags
+
     const parts = content.split(/<\/?pre[^>]*>/);
     return parts.map((part, index) => {
         // If it's an even index, it's outside pre tags
@@ -14,12 +14,12 @@ function formatMessage(content) {
                 .map(p => p.trim() ? `<p>${p}</p>` : '')
                 .join('');
         }
-        // If it's an odd index, it's inside pre tags, return as is
+
         return `<pre>${part}</pre>`;
     }).join('');
 }
 
-// Add thinking indicator while waiting for response
+
 function addThinkingIndicator() {
     const thinkingDiv = document.createElement('div');
     thinkingDiv.className = 'message assistant thinking';
@@ -40,7 +40,6 @@ function addThinkingIndicator() {
     thinkingDiv.scrollIntoView({ behavior: 'smooth' });
 }
 
-// Remove thinking indicator when response is received
 function removeThinkingIndicator() {
     const thinking = document.querySelector('.thinking');
     if (thinking) {
@@ -48,9 +47,9 @@ function removeThinkingIndicator() {
     }
 }
 
-// Add a new message to the chat
+
 function addMessage(content, role) {
-    // If it's a user message, show thinking indicator
+
     if (role === 'user') {
         addThinkingIndicator();
     } else {
@@ -72,13 +71,12 @@ function addMessage(content, role) {
     document.getElementById('messages').appendChild(messageDiv);
     messageDiv.scrollIntoView({ behavior: 'smooth' });
 
-    // Highlight code blocks after adding message
+
     messageDiv.querySelectorAll('pre code').forEach((block) => {
         hljs.highlightBlock(block);
     });
 }
 
-// Auto-resize textarea
 function autoResize(textarea) {
     textarea.style.height = 'auto';
     textarea.style.height = `${textarea.scrollHeight}px`;
@@ -93,11 +91,9 @@ function autoResize(textarea) {
     }
 }
 
-// Initialize message input
 document.addEventListener('DOMContentLoaded', function() {
     const messageInput = document.getElementById('messageInput');
     if (messageInput) {
-        // Handle Enter key
         messageInput.addEventListener('keydown', function(e) {
             if (e.key === 'Enter' && !e.shiftKey) {
                 e.preventDefault();
@@ -105,7 +101,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
 
-        // Handle input resize
         messageInput.addEventListener('input', function() {
             autoResize(this);
         });
