@@ -2,7 +2,7 @@
 
 A modern, responsive web chat interface for interacting with the DeepSeek language model through Ollama.
 
-![DeepSeek Chat Interface](https://raw.githubusercontent.com/your-username/deepseek-chat/main/screenshot.png)
+![DeepSeek Chat Interface](https://raw.githubusercontent.com/pavodi-NM/deepseek-ai-chatbot/main/screenshots/screenshot.png)
 
 ## Features
 
