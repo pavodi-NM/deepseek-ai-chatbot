@@ -4,6 +4,8 @@ A modern, responsive web chat interface for interacting with the DeepSeek langua
 
 ![DeepSeek Chat Interface](https://raw.githubusercontent.com/pavodi-NM/deepseek-ai-chatbot/main/screenshots/screenshot.png)
 
+![DeepSeek Chat Interface](https://raw.githubusercontent.com/pavodi-NM/deepseek-ai-chatbot/main/screenshots/screenshot-2.png)
+
 ## Features
 
 - 🚀 Real-time chat interface using WebSocket connections
@@ -23,8 +25,8 @@ A modern, responsive web chat interface for interacting with the DeepSeek langua
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/your-username/deepseek-chat.git
-cd deepseek-chat
+git clone git@github.com:pavodi-NM/deepseek-ai-chatbot.git
+cd deepseek-ai-chatbot
 ```
 
 2. Install required Python packages:
@@ -32,7 +34,7 @@ cd deepseek-chat
 pip install fastapi uvicorn httpx websockets
 ```
 
-3. Make sure Ollama is running:
+3. Make sure Ollama is running: (not mandatory - you can go to step 4, which will run the model in the background)
 ```bash
 ollama serve
 ```
