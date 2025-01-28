@@ -90,6 +90,7 @@ MIT
 ## Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
+Download and use it as you like in your local computer.
 
 ---
 
